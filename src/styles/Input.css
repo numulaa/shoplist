@@ -1,0 +1,15 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #51456b;
+  font-size: 1re;
+}
