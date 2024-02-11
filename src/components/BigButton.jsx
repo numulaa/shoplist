@@ -3,7 +3,7 @@ import "../styles/BigButton.css";
 
 const BigButton = () => {
   return (
-    <button>
+    <button className="big-button">
       <div className="icon-wrapper">
         <i class="fa-regular fa-user"></i>
       </div>

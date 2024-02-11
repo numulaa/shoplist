@@ -5,3 +5,8 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}

@@ -6,8 +6,10 @@ const Header = () => {
     <header>
       <nav>
         <p>ShopList</p>
-        <p>New List</p>
-        <p>Logout</p>
+        <ul>
+          <li>Log In</li>
+          <li>Sign Up</li>
+        </ul>
       </nav>
     </header>
   );
