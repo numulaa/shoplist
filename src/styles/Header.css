@@ -4,9 +4,21 @@ header {
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 nav ul {
   display: flex;
+  align-items: center;
   gap: 1rem;
   list-style: none;
+}
+header nav > p {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+nav ul .signup-button {
+  background-color: #ff8c38;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }

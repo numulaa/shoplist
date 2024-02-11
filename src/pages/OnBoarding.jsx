@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import "../styles/OnBoarding.css";
+import { useNavigate } from "react-router-dom";
 
 const OnBoarding = () => {
   const [joiningCode, setJoiningCode] = useState("");
-  const handleSubmitCode = () => {
+  const navigate = useNavigate();
+  const handleSubmitCode = (e) => {
+    e.preventDefault();
     console.log(`your code is ${joiningCode}`);
+    navigate("/main");
   };
   return (
     <>
-      {" "}
       <Header />
       <div className="on-boarding">
         <form onSubmit={handleSubmitCode} className="code-input-form">
@@ -23,7 +26,7 @@ const OnBoarding = () => {
             />
 
             <button type="submit">
-              <i class="fa-solid fa-arrow-right"></i>
+              <i className="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </form>

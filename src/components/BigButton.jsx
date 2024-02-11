@@ -5,7 +5,7 @@ const BigButton = () => {
   return (
     <button className="big-button">
       <div className="icon-wrapper">
-        <i class="fa-regular fa-user"></i>
+        <i className="fa-regular fa-user"></i>
       </div>
       <p>Type your item ...</p>
     </button>
