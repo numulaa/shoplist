@@ -11,6 +11,7 @@ button.big-button {
   border: none;
   border-radius: 1rem;
   width: 100%;
+  cursor: pointer;
 }
 .icon-wrapper {
   background-color: #ffead0;

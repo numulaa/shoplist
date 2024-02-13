@@ -1,0 +1,75 @@
+.modal-main-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(13, 11, 34, 0.2);
+  backdrop-filter: blur(5px);
+}
+.form-modal-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25%;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* align-items: center; */
+}
+.form-modal-container > h1 {
+  text-align: center;
+}
+
+.form-modal-close-button-wrapper {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+}
+.form-modal-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+/* .form-modal-container form .input-item-wrapper {
+
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+.form-modal-container form .input-item-wrapper > div {
+  width: 60%;
+}
+.form-modal-container form .input-item-wrapper > div + div {
+  width: 30%;
+} */
+/* .form-modal-container form .input-amount {
+  width: 30%;
+} */
+
+.btn.form-add-item-btn {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border: 2px solid #ff8c38;
+  background-color: #ff8c38;
+  color: #fff;
+  font-weight: 600;
+}
+.btn.form-add-item-btn:hover {
+  border: 2px solid #ff8c38;
+  background-color: #fff;
+  color: #ff8c38;
+}

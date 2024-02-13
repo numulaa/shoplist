@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/BigButton.css";
 
-const BigButton = () => {
+const BigButton = ({ onClick }) => {
   return (
-    <button className="big-button">
+    <button className="big-button" onClick={onClick}>
       <div className="icon-wrapper">
         <i className="fa-regular fa-user"></i>
       </div>

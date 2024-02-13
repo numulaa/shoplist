@@ -1,0 +1,25 @@
+.items-wrapper {
+  /* padding: 1rem; */
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.items-wrapper .items-detail-wrapper {
+  background-color: #ffead0;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.items-wrapper .items-amount-wrapper {
+  background-color: #ffead0;
+  padding: 1rem 1.75rem;
+  align-self: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.items-wrapper .items-detail-wrapper > small {
+  color: #a8a8a8;
+}
