@@ -22,6 +22,7 @@ const FormModal = ({ handleCloseModal }) => {
       itemAmount: itemAmount,
       itemRequester: itemRequester,
       createdAt: serverTimestamp(),
+      isFulfilled: false,
     };
     try {
       const docRef = await addDoc(shoplistsCollection, newItem);

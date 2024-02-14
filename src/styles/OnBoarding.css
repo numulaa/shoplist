@@ -11,7 +11,7 @@
   font-weight: 500;
   color: #fff;
 }
-.code-input-form > .input-wrapper {
+.code-input-form > .code-input-wrapper {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -21,7 +21,7 @@
   background-color: #fff;
   border-radius: 20px;
 }
-.code-input-form .input-wrapper input {
+.code-input-form .code-input-wrapper input {
   padding: 0.5rem 0;
   /* background-color: #fff; */
   background-color: #fff;
@@ -29,11 +29,11 @@
   border: none;
   width: 100%;
 }
-.code-input-form .input-wrapper input:active,
-.code-input-form .input-wrapper input:focus {
+.code-input-form .code-input-wrapper input:active,
+.code-input-form .code-input-wrapper input:focus {
   outline: none;
 }
-.code-input-form .input-wrapper button {
+.code-input-form .code-input-wrapper button {
   background-color: #fff;
   font-size: 1.5rem;
   color: #000;

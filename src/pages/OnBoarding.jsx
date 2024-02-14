@@ -15,7 +15,7 @@ const OnBoarding = () => {
     <div className="on-boarding">
       <form onSubmit={handleSubmitCode} className="code-input-form">
         <p>Join as a partcipant?</p>
-        <div className="input-wrapper">
+        <div className="code-input-wrapper">
           <input
             type="text"
             value={joiningCode}
