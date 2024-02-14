@@ -18,17 +18,20 @@ const ItemWrapper = ({ item }) => {
   };
   return (
     <li className="items-wrapper">
-      <form action="">
-        <input
-          type="checkbox"
-          id={item.id}
-          value={item.isFulfilled}
-          onChange={() => handleItemChange(item.id)}
-        />
-      </form>
       <div className="items-detail-wrapper">
-        <p>{item.itemName}</p>
-        <small>{item.itemRequester}</small>
+        <form action="">
+          <input
+            type="checkbox"
+            id={item.id}
+            value={item.isFulfilled}
+            onChange={() => handleItemChange(item.id)}
+            defaultChecked={item.isFulfilled}
+          />
+        </form>
+        <div>
+          <p>{item.itemName}</p>
+          <small>{item.itemRequester}</small>
+        </div>
       </div>
       <div className="items-amount-wrapper">
         <p>{item.itemAmount}</p>
