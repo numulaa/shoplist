@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import "../styles/OnBoarding.css";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
-
+import CreateShoplistModal from "../components/CreateShoplistModal";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase";
 const OnBoarding = () => {
   const [joiningCode, setJoiningCode] = useState("");
+  const [isSignup, setIsSignup] = useState(false);
+  const [isCreateShoplist, setIsCreateShoplist] = useState(false);
+  const [shoplistCollection, setShoplistCollection] = useState([]);
   const navigate = useNavigate();
+  useEffect(() => {
+    const unsub = onSnapshot(collection(db, "shoplist"), function (snapshot) {
+      const shoplistCollectionArr = snapshot.docs.map((doc) => doc.id);
+      setShoplistCollection(shoplistCollectionArr);
+    });
+    return unsub;
+  }, []);
   const handleSubmitCode = (e) => {
     e.preventDefault();
-    console.log(`your code is ${joiningCode}`);
-    navigate("/main");
+    if (shoplistCollection.indexOf(joiningCode) !== -1) {
+      navigate(`/main/${joiningCode}`);
+    } else {
+      alert("Please enter the right code");
+      setJoiningCode("");
+    }
   };
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsSignup(true);
+      }
+    });
+  }, []);
   return (
     <div className="on-boarding">
       <form onSubmit={handleSubmitCode} className="code-input-form">
@@ -37,10 +62,33 @@ const OnBoarding = () => {
           Share Codes or Links for Instant Collaboration, Perfect for Moms,
           Friends, and Beyond!
         </p>
-        <div className="buttons">
-          <button className="signup-button">Sign up to get started</button>
-          <button className="signin-button">Sign in</button>
-        </div>
+        {isSignup ? (
+          <div className="buttons">
+            <button
+              className="signup-button"
+              onClick={() => setIsCreateShoplist(true)}>
+              Create a new shoplist
+            </button>
+          </div>
+        ) : (
+          <div className="buttons">
+            <button
+              className="signup-button"
+              onClick={() => navigate("/login")}>
+              Sign up to get started
+            </button>
+            <button
+              className="signin-button"
+              onClick={() => navigate("/login")}>
+              Sign in
+            </button>
+          </div>
+        )}
+        {isCreateShoplist && (
+          <CreateShoplistModal
+            handleCloseModal={() => setIsCreateShoplist(false)}
+          />
+        )}
       </main>
     </div>
   );

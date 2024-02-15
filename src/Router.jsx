@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import OnBoarding from "./pages/OnBoarding";
 import MainPage from "./pages/MainPage";
 import Layout from "./components/Layout";
+import Login from "./pages/Login";
 
 const Router = () => {
   return (
@@ -10,7 +11,8 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<OnBoarding />} />
-          <Route path="/main" element={<MainPage />} />
+          <Route path="main/:shoplistDocId" element={<MainPage />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -3,20 +3,16 @@ import Input from "./Input";
 import "../styles/FormModal.css";
 import { shoplistsCollection } from "../firebase";
 import { addDoc, serverTimestamp } from "firebase/firestore";
+import { useParams } from "react-router-dom";
 
 const FormModal = ({ handleCloseModal }) => {
+  const { shoplistDocId } = useParams();
   const [item, setItem] = useState("");
-  const [itemAmount, setItemAmount] = useState(null);
+  const [itemAmount, setItemAmount] = useState(0);
   const [itemRequester, setItemRequester] = useState("");
   const handleAddMovie = async (e) => {
     e.preventDefault();
     // const user = auth.currentUser;
-    // const newMovie = {
-    //   title: movie,
-    //   isWatched: false,
-    //   createdBy: user.uid,
-    //   createdAt: serverTimestamp(),
-    // };
     const newItem = {
       itemName: item,
       itemAmount: itemAmount,
@@ -25,7 +21,7 @@ const FormModal = ({ handleCloseModal }) => {
       isFulfilled: false,
     };
     try {
-      const docRef = await addDoc(shoplistsCollection, newItem);
+      const docRef = await addDoc(shoplistsCollection(shoplistDocId), newItem);
       console.log("a new item added, with ID:", docRef.id);
       setItem("");
       handleCloseModal();
