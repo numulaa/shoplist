@@ -1,10 +1,16 @@
 header {
-  padding: 1rem;
+  padding: 1rem 2.5rem;
 }
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+nav .nav-link {
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #000;
 }
 nav ul {
   display: flex;
@@ -12,7 +18,17 @@ nav ul {
   gap: 1rem;
   list-style: none;
 }
-header nav > p {
+header nav .shoplist-title-icon-wrapper {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+header nav .shoplist-icon-wrapper {
+  width: 45px;
+  display: flex;
+  align-items: center;
+}
+header nav .app-title {
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -21,4 +37,10 @@ nav ul .signup-button {
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 10px;
+  cursor: pointer;
+}
+@media (min-width: 800px) {
+  header {
+    padding: 1rem 4rem;
+  }
 }

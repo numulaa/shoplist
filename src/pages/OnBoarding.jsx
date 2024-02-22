@@ -77,11 +77,6 @@ const OnBoarding = () => {
               onClick={() => navigate("/login")}>
               Sign up to get started
             </button>
-            <button
-              className="signin-button"
-              onClick={() => navigate("/login")}>
-              Sign in
-            </button>
           </div>
         )}
         {isCreateShoplist && (
