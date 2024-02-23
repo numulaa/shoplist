@@ -33,8 +33,8 @@ const Header = () => {
         </NavLink>
         {isLoggedIn ? (
           <ul>
-            <NavLink to="/login" className="nav-link">
-              <li>Create shoplist</li>
+            <NavLink to="/myshoplist" className="nav-link">
+              <li>My shoplist</li>
             </NavLink>
 
             <li className="signup-button nav-link" onClick={handleSignOut}>

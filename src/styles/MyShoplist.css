@@ -1,0 +1,19 @@
+.list-of-shoplist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #fff;
+}
+.my-shoplist-list-item {
+  padding: 2rem;
+  background-color: #115e59;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.my-shoplist-list-item .list-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
