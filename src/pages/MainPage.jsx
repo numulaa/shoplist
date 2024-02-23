@@ -12,6 +12,9 @@ const MainPage = () => {
   const [items, setItems] = useState([]);
   const [shoplistData, setShoplistData] = useState({});
   const [isShowingModalAddItem, setIsShowingModalAddItem] = useState(false);
+  const [isLinkCopied, setIsLinkCopied] = useState(false);
+  const shoplistLink = window.location.href;
+
   const handleOpenModalAddItem = () => {
     setIsShowingModalAddItem(true);
   };
@@ -39,6 +42,11 @@ const MainPage = () => {
 
     return unsub;
   }, []);
+  const handleCopyLink = () => {
+    window.navigator.clipboard.writeText(shoplistLink);
+    setIsLinkCopied(true);
+    console.log("clicked link");
+  };
   return (
     <div className="main-page-container">
       {isShowingModalAddItem && (
@@ -46,6 +54,15 @@ const MainPage = () => {
       )}
       <section className="mainpage-main-section">
         <h1>{shoplistData.shoplistName}</h1>
+        <div className="link-section">
+          <h4>Your Code: {shoplistDocId}</h4>
+          <button
+            className="copy-link-button"
+            onClick={handleCopyLink}
+            disabled={isLinkCopied}>
+            {isLinkCopied ? "Copied!" : "Copy link"}
+          </button>
+        </div>
         <p>{shoplistData.shoplistDesc}</p>
       </section>
       <BigButton onClick={handleOpenModalAddItem} />

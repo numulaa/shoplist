@@ -22,14 +22,17 @@ const CreateShoplistModal = ({ handleCloseModal }) => {
       shoplistName: shoplistName,
       shoplistDesc: shoplistDesc,
     };
+    const date = Date.now();
+    const shoplistCode = date.toString().substring(7);
+
     try {
-      const docRef = doc(db, "shoplist", shoplistName);
+      const docRef = doc(db, "shoplist", shoplistCode);
       await setDoc(docRef, newShoplist);
       console.log("a new item added, with ID:", docRef.id);
       setShoplistName("");
       handleCloseModal();
       console.log(shoplistName, newShoplist[shoplistName]);
-      navigate(`/main/${newShoplist[shoplistName]}`);
+      navigate(`/main/${shoplistCode}`);
     } catch (e) {
       console.error("Error adding document: ", e);
     }

@@ -9,3 +9,30 @@
   flex-direction: column;
   gap: 1rem;
 }
+.mainpage-main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.mainpage-main-section .link-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.mainpage-main-section .link-section .copy-link-button {
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: #115e59;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+}
+.mainpage-main-section .link-section .copy-link-button:hover {
+  background-color: #000;
+}
+.mainpage-main-section .link-section .copy-link-button:disabled,
+.mainpage-main-section .link-section .copy-link-button:hover[disabled] {
+  background-color: grey;
+  cursor: auto;
+}
