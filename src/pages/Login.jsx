@@ -39,7 +39,8 @@ const Login = () => {
     if (isSignup) {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // navigate("/");
+          console.log(userCredential);
+          navigate("/");
         })
         .catch((error) => {
           console.error(error.message);
@@ -47,7 +48,8 @@ const Login = () => {
     } else {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // navigate("/");
+          console.log(userCredential);
+          navigate("/");
         })
         .catch((error) => {
           console.error(error.message);
