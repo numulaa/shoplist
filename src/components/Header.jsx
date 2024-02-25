@@ -19,6 +19,7 @@ const Header = () => {
   // }, [location]);
   const handleSignOut = () => {
     signOut(auth).then(() => {
+      setIsLoggedIn(false);
       navigate("/");
     });
   };
@@ -27,6 +28,7 @@ const Header = () => {
       if (user) {
         setIsLoggedIn(true);
       }
+      // setIsLoggedIn(false);
     });
   }, [auth]);
 
