@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Header.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import shoplistIcon from "../assets/woman-shopping.svg";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
   // const location = window.location.href;
 
   // const [showShoplist, setShowShoplist] = useState(true);
@@ -18,7 +19,7 @@ const Header = () => {
   // }, [location]);
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      window.location.reload();
+      navigate("/");
     });
   };
   useEffect(() => {
