@@ -17,3 +17,17 @@
   color: #fff;
   font-size: 1.5rem;
 }
+.create-new-shoplist-button {
+  cursor: pointer;
+  padding: 0.75rem;
+  background-color: #ff8c38;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+.create-new-shoplist-button:hover {
+  background-color: #000;
+}

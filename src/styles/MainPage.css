@@ -36,3 +36,17 @@
   background-color: grey;
   cursor: auto;
 }
+
+@media (min-width: 800px) {
+  .main-page-container {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    margin: 0 auto;
+  }
+  .main-page-container .mainpage-main-section {
+    text-align: center;
+  }
+}

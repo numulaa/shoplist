@@ -12,6 +12,13 @@ nav .nav-link {
   text-decoration: none;
   color: #000;
 }
+.nav-link.myshoplist-button {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ff8c38;
+  border: 1px solid #ff8c38;
+}
 nav ul {
   display: flex;
   align-items: center;
@@ -37,6 +44,13 @@ nav ul .signup-button {
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 10px;
+  cursor: pointer;
+}
+nav ul .logout-button {
+  background-color: #ff8c38;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 100%;
   cursor: pointer;
 }
 @media (min-width: 800px) {
