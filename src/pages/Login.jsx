@@ -32,7 +32,7 @@ const Login = () => {
         navigate("/login");
       }
     });
-  }, [auth]);
+  });
 
   const onLoginHandle = (e) => {
     e.preventDefault();

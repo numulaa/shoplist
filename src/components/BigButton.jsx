@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../styles/BigButton.css";
 
 const BigButton = ({ onClick }) => {
@@ -10,6 +11,10 @@ const BigButton = ({ onClick }) => {
       <p>Type your item ...</p>
     </button>
   );
+};
+
+BigButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
 };
 
 export default BigButton;

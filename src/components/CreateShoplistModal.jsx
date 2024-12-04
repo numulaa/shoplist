@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import PropTypes from "prop-types";
 import Input from "./Input";
 import "../styles/FormModal.css";
 import { db, auth } from "../firebase";
@@ -79,6 +80,10 @@ const CreateShoplistModal = ({ handleCloseModal }) => {
       </div>
     </div>
   );
+};
+
+CreateShoplistModal.propTypes = {
+  handleCloseModal: PropTypes.func.isRequired,
 };
 
 export default CreateShoplistModal;

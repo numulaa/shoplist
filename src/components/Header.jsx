@@ -30,7 +30,7 @@ const Header = () => {
       }
       // setIsLoggedIn(false);
     });
-  }, [auth]);
+  }, []);
 
   return (
     <header>

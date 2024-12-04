@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Input from "./Input";
 import "../styles/FormModal.css";
 import { shoplistsCollection } from "../firebase";
@@ -70,6 +71,10 @@ const FormModal = ({ handleCloseModal }) => {
       </div>
     </div>
   );
+};
+
+FormModal.propTypes = {
+  handleCloseModal: PropTypes.func.isRequired,
 };
 
 export default FormModal;

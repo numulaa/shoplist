@@ -24,7 +24,7 @@ const MainPage = () => {
       setShoplistData(shoplistData);
     });
     return unsub;
-  }, []);
+  }, [shoplistDocId]);
   useEffect(() => {
     const unsub = onSnapshot(
       shoplistsCollection(shoplistDocId),
@@ -41,7 +41,7 @@ const MainPage = () => {
     );
 
     return unsub;
-  }, []);
+  }, [shoplistDocId]);
   const handleCopyLink = () => {
     window.navigator.clipboard.writeText(shoplistLink);
     setIsLinkCopied(true);

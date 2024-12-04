@@ -39,13 +39,13 @@ const MyShoplist = () => {
         return unsub;
       }
     });
-  }, [auth]);
+  }, []);
 
   return (
     <div className="on-boarding">
       <main className="onboarding-main-section">
         <h1>Hello, {userName}</h1>
-        <p>Here's the list of all your shoplist</p>
+        <p>Here&rsquo;s the list of all your shoplist</p>
         {isLoading && (
           <div className="loader-wrapper">
             <div className="loader"></div>
